@@ -17,3 +17,42 @@ public class ImportTest {
 
     }
 }
+
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        out.println("default constructor");
+    }
+    void sleep() {
+        out.println(this.name + " zzz");
+    }
+}
+
+class HouseDog extends Dog {
+    HouseDog(String name) {
+        this.setName(name);
+    }
+
+    HouseDog(int type) {
+        if (type == 1) {
+            this.setName("yorkshire");
+        } else if (type == 2) {
+            this.setName("bulldog");
+        }
+    }
+    void sleep() {
+        out.println(this.name + " zzz in hous");
+    }
+
+    void sleep(int hour) {
+        out.println(this.name + " zzz in house for " + hour + " h");
+    }
+}
+
