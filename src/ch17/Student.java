@@ -3,7 +3,7 @@ package ch17;
 import java.util.Arrays;
 import java.util.List;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private int score;
 
@@ -28,6 +28,11 @@ public class Student {
                 .average()
                 .getAsDouble();
         System.out.println(avg);
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(score, o.score);
     }
 }
 
