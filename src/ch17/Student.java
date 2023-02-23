@@ -6,34 +6,33 @@ import java.util.List;
 public class Student implements Comparable<Student> {
     private String name;
     private int score;
+    private String sex;
 
-    public Student(String name, int score) {
+    public Student(String name, String sex, int score) {
         this.name = name;
+        this.sex = sex;
         this.score = score;
     }
 
-    public String getName() { return name; }
-    public int getScore() { return score; }
-
-    public static void main(String[] args) {
-
-        List<Student> list = Arrays.asList(
-                new Student("홍길동", 10),
-                new Student("신용권",20),
-                new Student("유미선",30)
-        );
-
-        double avg = list.stream()
-                .mapToInt(student -> student.getScore())
-                .average()
-                .getAsDouble();
-        System.out.println(avg);
+    public String getSex() {
+        return sex;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
 
     @Override
     public int compareTo(Student o) {
         return Integer.compare(score, o.score);
+
     }
 }
+
 
 
