@@ -18,3 +18,4 @@ public class A {
     void method2() {}
     private void method3() {}
 }
+
